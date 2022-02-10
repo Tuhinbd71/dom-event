@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <!-- Different ways to use addEventListener on a button -->
+    <h1>Event niye clickbaji</h1>
+    <!-- system-1 -->
+    <button onclick="document.body.style.backgroundColor='yellow'">Click me</button>
+
+    <button onclick="clickRed()">click me</button>
+
+    <button id="make-blue-button">Click me: Blue</button>
+
+    <button id="make-green-button">Click me: Green</button>
+
+    <button id="make-orange-button">Click me: Orange</button>
+
+    <button id="make-hotpink-button">Click me: hotpink</button>
+
+    <button id="make-lightblue-button">Click me: lightblue</button>
+
+    <script>
+        // system - 2
+        function clickRed() {
+            document.body.style.backgroundColor = 'red';
+        }
+        // system - 3
+        const blueButton = document.getElementById('make-blue-button');
+        blueButton.onclick = makeBlue;
+        function makeBlue() {
+            document.body.style.backgroundColor = 'blue';
+        }
+        // system - 4
+        const greenButton = document.getElementById('make-green-button');
+        greenButton.onclick = function () {
+            document.body.style.backgroundColor = 'green';
+        }
+        // system - 5
+        const orangeButton = document.getElementById('make-orange-button');
+        orangeButton.addEventListener('click', orangeButtonn)
+        function orangeButtonn() {
+            document.body.style.backgroundColor = 'orange';
+        }
+        // system - 6
+        const hotpinkButton = document.getElementById('make-hotpink-button');
+        hotpinkButton.addEventListener('click', function () {
+            document.body.style.backgroundColor = 'hotpink';
+        })
+        // system - 7
+        document.getElementById('make-lightblue-button').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'lightblue';
+        })
+
+    </script>
+</body>
+
+</html>
